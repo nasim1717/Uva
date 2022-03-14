@@ -1,0 +1,28 @@
+// uva 1230 MODEX
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int pow(long long x, long long n, long long p){
+    int res=1;
+    x=x%p;
+    if(x==0)
+        return 0;
+    while(n>0){
+        if(n&1)
+            res=(res*x)%p;
+        n = n>>1; //n=n/2
+        x = (x*x)%p;
+    }
+    return res;
+}
+int main(){
+    long long int test,x,n,y;
+    while(cin>>test and test){
+        while(test--){
+            cin>>x>>n>>y;
+            cout<<pow(x,n,y)<<endl;
+        }
+    }
+return 0;
+}
