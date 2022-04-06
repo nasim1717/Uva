@@ -1,0 +1,35 @@
+//problem no 100
+
+#include<stdio.h>
+int scamp(int a){
+    int i = 0;
+    while(1){
+        i++;
+        if(a==1)
+            break;
+        if(a%2!=0)
+            a = (3*a)+1;
+        else
+            a/=2;
+    }
+    return i;
+}
+main(){
+    int i,a,b,temp,length,max;
+    while(scanf("%d %d", &a, &b)==2){
+        printf("%d %d ", a, b);
+        max=0;
+        if(a>b){
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        for(i=a; i<=b; i++){
+            length = scamp(i);
+            if(length>max)
+                max = length;
+        }
+         printf("%d\n", max);
+    }
+return 0;
+}
