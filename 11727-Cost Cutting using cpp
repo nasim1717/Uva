@@ -1,0 +1,18 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t,x,y,z,cas=0;
+    cin>>t;
+    while(t--){
+        cin>>x>>y>>z;
+        cas++;
+        if((x>y && x<z)||(x<y && x>z))
+            cout<<"Case "<<cas<<": "<<x<<endl;
+        else if((y>x && y<z)||(y<x && y>z))
+            cout<<"Case "<<cas<<": "<<y<<endl;
+        else
+            cout<<"Case "<<cas<<": "<<z<<endl;
+    }
+return 0;
+}
