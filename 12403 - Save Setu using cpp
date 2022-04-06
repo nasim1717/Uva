@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+   long long int t,k,sum=0;
+    string s;
+    cin>>t;
+    while(t--){
+        cin>>s;
+        if(s=="donate"){
+            cin>>k;
+            sum+=k;
+        }
+       else if(s=="report")
+            printf("%d\n", sum);
+    }
+return 0;
+}
