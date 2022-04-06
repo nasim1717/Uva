@@ -1,0 +1,11 @@
+//problem uva 1124
+#include<stdio.h>
+#include<string.h>
+main(){
+    char ch[1010];
+
+    while(gets(ch)){
+        puts(ch);
+    }
+return 0;
+}
