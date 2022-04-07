@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int i,j,t,sum=0,a=1,y,b = -1,x,n,arr[100010];
+    string s,d, h;
+    cin>>t;
+    for(i=1; i<=t; i++){
+        cin>>n;
+        for(j=1; j<=n; j++){
+            cin>>s;
+            if(s=="LEFT"){
+                arr[j] = b;
+                sum+=b;
+            }
+            else if(s=="RIGHT"){
+                arr[j] = a;
+                sum+=a;
+            }
+            else{
+                cin>>h;
+                cin>>y;
+                x = arr[y];
+                arr[j] = x;
+                sum+=arr[y];
+
+            }
+        }
+        cout<<sum<<endl;
+        sum=0;
+    }
+return 0;
+}
