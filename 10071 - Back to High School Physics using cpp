@@ -1,0 +1,11 @@
+
+#include<iostream>
+using namespace std;
+main(){
+    int u,t,a;
+   while(scanf("%d %d", &u,&t)!=EOF){
+    a = t*2;
+    cout<<u*a<<endl;
+   }
+return 0;
+}
