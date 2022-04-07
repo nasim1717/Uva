@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int i,a,b,one,two;
+    while(scanf("%d %d", &a,&b)!=EOF){
+        if(a==-1 && b==-1)
+            break;
+        if(a>b){
+            one  = a-b;
+            two = 100-a+b;
+        }
+        else{
+            one  = b-a;
+            two = 100-b+a;
+        }
+
+        if(one<two)
+            printf("%d\n", one);
+        else
+            printf("%d\n", two);
+    }
+return 0;
+}
