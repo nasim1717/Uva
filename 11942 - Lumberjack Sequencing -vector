@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int i,j,t,d,x,y,a,c;
+    vector<int>v[1000];
+    cin>>t;
+    for(i=0; i<t; i++){
+        for(j=0; j<10; j++){
+            cin>>a;
+            v[i].push_back(a);
+        }
+    }
+    cout<<"Lumberjacks:"<<endl;
+    for(i=0; i<t; i++){
+            c=0;
+            d=0;
+        for(j=0; j<9; j++){
+            if(v[i][j]>v[i][j+1])
+                x=0;
+            else
+                c = 1;
+        }
+        for(j=0; j<9; j++){
+            if(v[i][j]<v[i][j+1])
+                y=0;
+            else
+                d = 1;
+        }
+        if((x==0 && c==0) || (y==0 && d==0))
+            printf("Ordered\n");
+        else
+            printf("Unordered\n");
+    }
+return 0;
+}
