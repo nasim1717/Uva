@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int i,j,t,b,d,cas=0;
+    string s;
+    cin>>t;
+    while(t--){
+         vector<string>v[1000];
+        cas++;
+        for(i=0; i<10; i++){
+            for(j=0; j<2; j++){
+                cin>>s;
+                v[i].push_back(s);
+            }
+        }
+        b=0;
+        d=0;
+        for(i=0; i<10; i++){
+            for(j=1; j<2; j++){
+             stringstream degree(v[i][j]);
+                degree>>d;
+                if(d>b){
+                    b = d;
+                }
+            }
+        }
+        d=0;
+        cout<<"Case #"<<cas<<":"<<endl;
+        for(i=0; i<10; i++){
+            for(j=1; j<2; j++){
+                stringstream degree(v[i][j]);
+                degree>>d;
+                if(b==d)
+                    cout<<v[i][0]<<endl;
+            }
+        }
+
+    }
+return 0;
+}
