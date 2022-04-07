@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+ long int t,n,a,i,cas=0;
+    vector<int>v;
+    cin>>t;
+    while(t--){
+        cas++;
+        cin>>n;
+        for(i=0; i<n; i++){
+            cin>>a;
+            v.push_back(a);
+        }
+    sort(v.begin(),v.end());
+    for(i=0; i<n; i++)
+        cout<<v[i]<<" ";
+
+    printf("\nCase %ld: %ld\n",cas,v[n-1]);
+    }
+return 0;
+}
