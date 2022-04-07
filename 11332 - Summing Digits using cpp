@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int digit(int x){
+    int y,dig=0;
+    while(x){
+           y = x%10;
+           dig+=y;
+           x/=10;
+        }
+    return dig;
+}
+int main(){
+    int sum,dig,i,a;
+    string n;
+    while(1){
+        cin>>n;
+        sum=0;
+        if(n=="0")
+            break;
+        for(i=0; i<(int)n.size(); i++){
+            sum+=n[i]-'0';
+        }
+        dig = digit(sum);
+        a = dig;
+        if(dig>=10)
+            dig = digit(a);
+        printf("%d\n", dig);
+
+    }
+return 0;
+}
