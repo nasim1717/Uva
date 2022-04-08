@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+#include<sstream>
+using namespace std;
+int main(){
+    int i,j,t,n,a,len;
+    while(scanf("%d", &t)!=EOF){
+        while(t--){
+            int arr[10]={0};
+            cin>>n;
+            for(i=1; i<=n; i++){
+                stringstream sso;
+                sso<<i;
+                string s;
+                sso>>s;
+                len = s.size();
+                for(j=0; j<len; j++){
+                    a = s[j]-'0';
+                    arr[a]++;
+                }
+            }
+        for(i=0; i<10; i++){
+            if(i==0)
+                printf("%d", arr[i]);
+            else
+                printf(" %d", arr[i]);
+        }
+        printf("\n");
+        }
+    }
+return 0;
+}
