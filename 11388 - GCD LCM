@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+long long int g,l,t;
+cin>>t;
+while(t--){
+    cin>>g>>l;
+
+    if(l%g==0)
+        printf("%lld %lld\n", g,l);
+    else
+        cout<<"-1"<<endl;
+
+}
+return 0;
+}
