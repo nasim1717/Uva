@@ -1,0 +1,10 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int t,m,n,multi;
+    while(scanf("%d %d", &m,&n)!=EOF){
+        multi = m*n;
+        cout<<multi-1<<endl;
+        }
+return 0;
+}
