@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int i,t,x,ar[20],full_marks,class_test,cas=0;
+    cin>>t;
+    while(t--){
+        vector<int>v;
+        full_marks = 0;
+        cas++;
+        for(i=0; i<7; i++){
+            cin>>ar[i];
+        }
+        for(i=4; i<=6; i++){
+            x = ar[i];
+            v.push_back(x);
+        }
+        sort(v.begin(), v.end());
+        class_test = (v[1]+v[2])/2;
+
+        for(i=0; i<=3; i++)
+            full_marks += ar[i];
+
+        full_marks+=class_test;
+
+        if(full_marks >= 90)
+           cout<<"Case "<<cas<<": "<<"A"<<endl;
+        else if(full_marks >= 80 && full_marks<90)
+            cout<<"Case "<<cas<<": "<<"B"<<endl;
+        else if(full_marks >= 70 && full_marks < 80)
+           cout<<"Case "<<cas<<": "<<"C"<<endl;
+        else if(full_marks >= 60 && full_marks < 70)
+            cout<<"Case "<<cas<<": "<<"D"<<endl;
+        else if(full_marks < 60)
+           cout<<"Case "<<cas<<": "<<"F"<<endl;
+    }
+
+return 0;
+}
