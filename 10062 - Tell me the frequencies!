@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    char st[10001];
+    int i,j,len,ln=0;
+    while(gets(st)){
+        int arr[128]={0};
+        if(ln)
+            cout<<endl;
+        len = strlen(st);
+        for(i=0; i<len; i++){
+            j=st[i];
+            arr[j]++;
+        }
+        for(i=1; i<=len; i++){
+            for(j=127; j>=32; j--){
+                    if(arr[j]==i)
+                        printf("%d %d\n", j,i);
+            }
+        }
+        ln=1;
+        st[0]='\0';
+    }
+return 0;
+}
+
