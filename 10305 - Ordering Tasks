@@ -1,0 +1,43 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<bool>discoverd;
+vector<vector<int>>adjList;
+vector<int>topsort;
+void dfs(int u){
+    discoverd[u]=true;
+    int v;
+    for(unsigned i=0; i<adjList[u].size(); i++){
+        v= adjList[u][i];
+        if(!discoverd[v])
+            dfs(v);
+    }
+    topsort.push_back(u);
+
+}
+int main(){
+    int m,n;
+    while(cin>>n>>m, n!=0 || m!=0){
+        discoverd.clear();
+        discoverd.assign(n+1, 0);
+        adjList.clear();
+        adjList.resize(n+1);
+        topsort.clear();
+        int u,v;
+        while(m--){
+            cin>>u>>v;
+            adjList[u].push_back(v);
+        }
+        for(int i=1; i<=n; i++){
+            if(!discoverd[i])
+                dfs(i);
+        }
+        for(int i=n-1; i>=0; i--){
+            cout<<topsort[i];
+            if(i)
+                cout<<" ";
+        }
+        cout<<endl;
+    }
+
+}
