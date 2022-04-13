@@ -1,0 +1,23 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int len1,len2,i,cnt;
+    string st1,st2;
+    while(cin>>st1>>st2){
+        cnt=0;
+        len1=st1.size();
+        len2 = st2.size();
+        for(i=0; i<len2 && cnt<len1; i++){
+            if(st2[i]==st1[cnt]){
+                cnt++;
+            }
+
+        }
+        if(cnt==len1)
+            printf("Yes\n");
+        else
+            printf("No\n");
+    }
+return 0;
+}
