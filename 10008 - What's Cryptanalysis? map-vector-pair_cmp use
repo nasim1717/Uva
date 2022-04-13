@@ -1,0 +1,40 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+bool cmp(pair<string,int>x,pair<string,int>y){
+    if(x.second!=y.second) return x.second>y.second;
+    else
+    return x.first<y.first;
+}
+int main(){
+    int t,scnd,len,i;
+    string st,ch,fst;
+    map<string, int>mp;
+    vector<pair<string,int>>vp;
+    cin>>t;
+    getline(cin,st);
+    while(t--){
+        getline(cin,st);
+        len = st.size();
+        for(i=0; i<len; i++){
+            if(st[i]>='A' && st[i]<='Z'){
+                ch=st[i];
+               mp[ch]++;
+            }
+            else if(st[i]>='a' && st[i]<='z'){
+                ch=st[i]-32;
+                mp[ch]++;
+            }
+        }
+    }
+    for(auto it: mp){
+        scnd=it.second;
+        fst=it.first;
+        vp.push_back({fst,scnd});
+        }
+        sort(vp.begin(),vp.end(),cmp);
+        for(i=0; i<vp.size(); i++)
+            cout<<vp[i].first<<" "<<vp[i].second<<endl;
+
+return 0;
+}
