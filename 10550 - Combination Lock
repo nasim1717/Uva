@@ -1,0 +1,16 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int start,first,second,thard;
+    while(cin>>start>>first>>second>>thard){
+        if(start==0 && first==0 && second==0 && thard==0)
+            break;
+        else
+        {
+            printf("%d\n", 1080+((start-first+40)%40+(second-first+40)%40+(second-thard+40)%40)*9);
+        }
+    }
+return 0;
+
+}
