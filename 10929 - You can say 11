@@ -1,0 +1,25 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int mult(string num, int a){
+    int i,res = 0;
+    for(i=0; i<(int)num.size(); i++)
+        res = (res*10+(int)num[i]-'0')%a;
+return res;
+}
+main(){
+    string num;
+    int div;
+    while(cin>>num){
+        if(num == "0")
+            break;
+        div = mult(num,11);
+        if(div==0)
+            cout<<num<<" is a multiple of 11."<<endl;
+        else
+            cout<<num<<" is not a multiple of 11."<<endl;
+
+    }
+return 0;
+}
