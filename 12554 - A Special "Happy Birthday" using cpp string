@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int i,n,a,b,x,j;
+    string arr[17]= {"Happy", "birthday", "to", "you","Happy", "birthday", "to", "you",
+    "Happy", "birthday", "to", "Rujia","Happy", "birthday","to", "you"};
+    string s;
+    vector<string>v[100];
+    cin>>n;
+    for(i=0; i<n; i++){
+        for(j=0; j<1; j++){
+            cin>>s;
+            v[i].push_back(s);
+        }
+    }
+    a=0;
+    b=0;
+    if(n>16)
+        x=n;
+    else if(n<=16)
+        x=16;
+    for(j=0; j<x; j++){
+        if(a==n)
+            a=0;
+        if(b==16)
+            b=0;
+        cout<<v[a][0]<<":"<< " ";
+        cout<<arr[b]<<endl;
+        a++;
+        b++;
+    }
+    if(b<15)
+        for(i=b; i<16; i++){
+            if(a==n)
+                a=0;
+            cout<<v[a][0]<<":"<<" ";
+            cout<<arr[i]<<endl;
+            a++;
+        }
+return 0;
+}
