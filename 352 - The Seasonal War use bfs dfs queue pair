@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+string str[30];
+int n;
+int di[] = {0,-1,-1,-1,0,1,1, 1};
+int dj[] = {1, 1,0,-1, -1,-1,0,1};
+void bfs(pair<int, int>pa){
+    queue<pair<int, int> >qq;
+    qq.push(pa);
+    while(!qq.empty()){
+        pair<int, int>u = qq.front();
+        qq.pop();
+        for(int m=0; m<8; m++){
+            int ii = u.first+di[m];
+            int jj= u.second+dj[m];
+            if(0<=ii and ii<=n and 0<=jj and jj<=n){
+                if(str[ii][jj]=='1'){
+                    str[ii][jj]='0';
+                    qq.push(make_pair(ii,jj));
+                }
+            }
+        }
+    }
+}
+int main(){
+    int i,j,cas=0;
+    while(cin>>n){
+        int cnt=0;
+        cas++;
+        for( i=0; i<n; i++){
+            cin>>str[i];
+        }
+        for(i=0; i<n; i++){
+            for(j=0; j<n; j++){
+                if(str[i][j]=='1'){
+                    cnt++;
+                    bfs(make_pair(i,j));
+                }
+            }
+        }
+        printf("Image number %d contains %d war eagles.\n",cas,cnt);
+    }
+return 0;
+}
