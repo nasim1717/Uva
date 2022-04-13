@@ -1,0 +1,22 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int student[150000];
+int main(){
+    int stu,tc,i;
+    cin>>tc;
+    while(tc--){
+        cin>>stu;
+        int maxi= -200000,max_dif= -200000;
+        for(i=0; i<stu; i++)
+            cin>>student[i];
+        for(i=0; i<stu-1; i++){
+            if(student[i]>maxi)
+                maxi=student[i];
+            if(maxi-student[i+1]>max_dif)
+                max_dif=maxi-student[i+1];
+        }
+        cout<<max_dif<<endl;
+    }
+return 0;
+}
