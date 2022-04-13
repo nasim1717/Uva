@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int HIGHT_VALU = 7490;
+int coins[]={1, 5, 10, 25 ,50};
+int main(){
+    int i,j,coin;
+    vector<long long>num(HIGHT_VALU, 0);
+    num[0]=1;
+    for(coin=0; coin<5; coin++){
+       i=coins[coin];
+       for(j=0; i<HIGHT_VALU; j++){
+            num[i]+=num[j];
+            i++;
+       }
+    }
+int n;
+    while(cin>>n){
+        cout<<num[n]<<endl;
+    }
+return 0;
+}
