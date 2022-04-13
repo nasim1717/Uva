@@ -1,0 +1,13 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+   long long int pizza;
+   while(1){
+        cin>>pizza;
+        if(pizza>=0)
+            printf("%lld\n",(pizza*(pizza+1)/2+1));
+        else break;
+   }
+return 0;
+}
