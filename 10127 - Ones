@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int c,n,ones;
+    while(cin>>n){
+        c=0;
+        ones=0;
+        do{
+            c=(c*10+1)%n;
+            ones++;
+        }
+        while(c!=0);
+        printf("%d\n", ones);
+    }
+}
