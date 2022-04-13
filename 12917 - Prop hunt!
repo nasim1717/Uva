@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+int p,h,o,sum;
+    while(cin>>p>>h>>o){
+        sum = p+h;
+        if(o<sum)
+            cout<<"Hunters win!"<<endl;
+        else
+            cout<<"Props win!"<<endl;
+    }
+return 0;
+}
