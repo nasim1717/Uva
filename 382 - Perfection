@@ -1,0 +1,29 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int i,x,a=0;
+    while(cin>>x){
+            int sum=0;
+            if(a==0){
+                printf("PERFECTION OUTPUT\n");
+                a=1;
+            }
+            if(x==0){
+                printf("END OF OUTPUT\n");
+                break;
+            }
+        for(i=1; i<=x/2; i++){
+            if(x%i==0)
+                sum+=i;
+        }
+        if(sum==x)
+            printf("%5d  PERFECT\n", x);
+        else if(x>sum){
+            printf("%5d  DEFICIENT\n", x);
+        }
+        else
+            printf("%5d  ABUNDANT\n", x);
+    }
+return 0;
+}
