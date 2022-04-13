@@ -1,0 +1,14 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int c,f,i,n;
+    float tem;
+    cin>>n;
+    for(i=1; i<=n; i++){
+        cin>>c>>f;
+        tem = c+(5*((float)f/9));
+        printf("Case %d: %.2f\n", i,tem);
+    }
+return 0;
+}
