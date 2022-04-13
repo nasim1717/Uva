@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,k,total,buts;
+    while(cin>>n>>k){
+             total = n;
+            while(n>=k){
+                buts = n/k;
+                total += buts;
+                n = buts + (n%k);
+            }
+        printf("%d\n", total);
+    }
+return 0;
+}
