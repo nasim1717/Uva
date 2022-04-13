@@ -1,0 +1,18 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int p,k,n,t,sum,cas=0;
+    cin>>t;
+    while(t--){
+        cin>>n>>k>>p;
+        cas++;
+        sum =k+p;
+         while(sum>n){
+            sum =sum-n;
+    }
+
+        cout<<"Case "<<cas<<": "<<sum<<endl;
+    }
+return 0;
+}
