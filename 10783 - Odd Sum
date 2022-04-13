@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int t,i,j,a,b,sum;
+    scanf("%d", &t);
+    for(i=1; i<=t; i++){
+        cin>>a>>b;
+        sum=0;
+        if(a%2==0)
+            a++;
+        for(j=a; j<=b; j+=2)
+            sum+=j;
+        printf("Case %d: %d\n", i,sum);
+    }
+
+return 0;
+}
