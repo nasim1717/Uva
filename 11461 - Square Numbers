@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#include<math.h>
+using namespace std;
+int main(){
+    int a,i,b,sq,count;
+    while(cin>>a>>b){
+        if(a==0 && b==0)
+            break;
+        sq=0;
+        count = 0;
+        if(a==0)
+            a++;
+        for(i=a; i<=b; i++){
+            sq = (int)sqrt(i);
+            if((sq*sq)==i)
+                count++;
+        }
+        cout<<count<<endl;
+    }
+return 0;
+}
