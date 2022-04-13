@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+main(){
+    int l,len,i,cas=0,count,a=1;
+    string line;
+    cin>>l;
+    getline(cin, line);
+    while(a<=l){
+        getline(cin, line);
+            count=0;
+            cas++;
+            len = line.size();
+            for(i=0; i<len; i++){
+                if(line[i]=='a' || line[i]=='d' || line[i]=='g' || line[i]=='j'||line[i]=='m'||line[i]=='p'||line[i]=='t'||line[i]=='w'){
+                    count+=1;
+                }
+                else if(line[i]=='b' || line[i]=='e' || line[i]=='h' || line[i]=='k'||line[i]=='n'||line[i]=='q'||line[i]=='u'||line[i]=='x'){
+                   count+=2;
+               }
+                else if(line[i]=='c' || line[i]=='f' || line[i]=='i' || line[i]=='l'||line[i]=='o'||line[i]=='r'||line[i]=='v'||line[i]=='y'){
+                    count+=3;
+               }
+               else if(line[i]=='s' || line[i]=='z'){
+                count+=4;
+               }
+                else if(line[i]==' '){
+                    count+=1;
+                }
+            }
+        printf("Case #%d: %d\n",cas,count);
+        a++;
+    }
+
+return 0;
+}
