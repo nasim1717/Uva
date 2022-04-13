@@ -1,0 +1,15 @@
+
+#include<bits/stdc++.h>
+#include<math.h>
+using namespace std;
+int main(){
+    long long int lights,sq;
+    while(cin>>lights and lights){
+        sq = sqrt(lights);
+        if(lights==sq*sq)
+            printf("yes\n");
+        else
+            printf("no\n");
+    }
+return 0;
+}
