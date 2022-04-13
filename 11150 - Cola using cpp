@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,pro,empty,w,x;
+
+    while(scanf("%d", &n)!=EOF){
+         pro = n;
+        empty = 0;
+        while(n>2){
+            w = n/3;
+            empty+=w;
+            x = n%3;
+            n = w+x;
+        }
+    if(n==2)
+        empty+=1;
+    cout<<pro+empty<<endl;
+    }
+return 0;
+
+}
+
