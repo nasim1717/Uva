@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    long long int a,b,i,terms,n,nc,cas=0;
+    while(1){
+        cin>>a>>b;
+        cas++;
+        if(a<0 && b<0)
+            break;
+        terms=1;
+        n=a;
+        while(n!=1){
+            if(n%2==0)
+                n=n/2;
+            else{
+                nc = n*3+1;
+                n=nc;
+                if(n>b)
+                    break;
+            }
+            terms++;
+        }
+        printf("Case %d: A = %d, limit = %d, number of terms = %d\n", cas,a,b,terms);
+    }
+return 0;
+}
