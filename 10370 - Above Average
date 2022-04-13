@@ -1,0 +1,22 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int i,n,m,sum,avg,count,arr[10000];
+    cin>>n;
+    while(n--){
+        cin>>m;
+        sum=0;
+        count=0;
+        for(i=0; i<m; i++){
+            cin>>arr[i];
+            sum+=arr[i];
+        }
+        avg = sum/m;
+        for(i=0; i<m; i++)
+            if(arr[i]>avg)
+                count++;
+        printf("%.3f%\n", float(100*count)/m);
+    }
+return 0;
+}
