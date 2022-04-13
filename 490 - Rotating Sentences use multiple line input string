@@ -1,0 +1,24 @@
+
+#include<bits/stdc++.h>
+#include<cstring>
+using namespace std;
+int main(){
+    int i,j,posi=0,length=0;
+    string sentense[105];
+    while(getline(cin,sentense[posi])){
+        if(sentense[posi].size()>length)
+            length=sentense[posi].size();
+        posi++;
+    }
+    for(i=0; i<length; i++){
+        for(j=posi-1; j>=0; j--){
+            if(sentense[j].size()>i)
+                cout<<sentense[j][i];
+            else
+                cout<<" ";
+
+        }
+        cout<<endl;
+    }
+return 0;
+}
