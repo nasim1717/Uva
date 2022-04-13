@@ -1,0 +1,19 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    long long int arr[81],i,m,n,sum;
+    n = 0;
+    m = 1;
+    for(i=1; i<=81; i++){
+        sum = n+m;
+        arr[i] = sum;
+        n = m;
+        m = sum;
+
+    }
+    while(cin>>n and n){
+        printf("%lld\n", arr[n]);
+    }
+return 0;
+}
