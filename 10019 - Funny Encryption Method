@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int binary(int n){
+    int cnt=0;
+    while(n){
+       cnt+=n&1;
+       n/=2;
+    }
+    return cnt;
+}
+int main(){
+    int n,m,bin,hex;
+    cin>>n;
+    while(n--){
+        cin>>m;
+        bin;
+        hex=0;
+        bin=binary(m);
+        while(m!=0){
+            hex+=binary(m%10);
+            m/=10;
+        }
+    cout<<bin<<" "<<hex<<endl;
+    }
+return 0;
+}
