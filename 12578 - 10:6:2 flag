@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    double w,r,area,rect,l;
+    int t;
+    cin>>t;
+    while(t--){
+        cin>>l;
+        w = l*.6;
+        r = l/5;
+        area = acos(-1)*r*r;
+        rect = l * w;
+        printf("%.2lf %.2lf\n", area,(rect-area));
+    }
+return 0;
+}
