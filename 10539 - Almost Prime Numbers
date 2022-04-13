@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int arr[1000001];
+int n=1000001;
+vector<int>v;
+void sieve()
+{
+	memset(arr,0,sizeof(arr));
+	arr[0]=arr[1]=1;
+	for(int i=2;i*i<=n;i++)
+	{
+		if(arr[i]==0)
+		{
+			for(int j=i*i;j<=n;j+=i)
+			{
+				arr[j]=1;
+			}
+		}
+	}
+}
+
+vector<long long int>ans;
+
+void solve(){
+  long long  int i, j;
+    for(i=0; i<=n; i++){
+        if(!arr[i]){
+            for(j=i*i; j<1000000000001; j*=i)
+                ans.push_back(j);
+        }
+    }
+sort(ans.begin(),ans.end());
+}
+
+int main(){
+
+    sieve();
+    solve();
+    long long int t,l,r,i,a,cnt;
+    cin>>t;
+    while(t--){
+        cnt=0;
+        i=0;
+        cin>>l>>r;
+        while(ans[i]<l)
+            i++;
+        for(; i<ans.size() && ans[i]<=r; i++)
+            cnt++;
+        cout<<cnt<<endl;
+    }
+
+return 0;
+}
