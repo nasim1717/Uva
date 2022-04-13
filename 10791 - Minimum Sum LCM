@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#include<math.h>
+using namespace std;
+long long sum;
+main(){
+    long long n,i,t,cas=0,ans;
+        while(cin>>n){
+            if(n==0)
+                break;
+            cas++;
+            sum=0;
+            t=0;
+            int x = sqrt(n+1);
+            for(i=2; i<=x; i++){
+                ans=1;
+                if(n%i==0){
+                    t++;
+                    while(n%i==0){
+                        ans*=i;
+                        n/=i;
+                    }
+                sum+=ans;
+                }
+            }
+            if(n!=1 || t==0){
+                sum+=n;
+                t++;
+            }
+            if(t==1)
+               sum++;
+
+            printf("Case %lld: %lld\n",cas,sum);
+        }
+
+return 0;
+}
