@@ -1,0 +1,24 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  long int x,sum,n,a,b;
+  while(cin>>n and n){
+    priority_queue<long long>pq;
+    sum=0;
+    while(n--){
+        cin>>x;
+        pq.push(-x);
+    }
+    while(pq.size()>1){
+       a=pq.top();
+       pq.pop();
+       b=pq.top();
+       pq.pop();
+       sum+= -a-b;
+       pq.push(a+b);
+    }
+    cout<<sum<<endl;
+  }
+return 0;
+}
