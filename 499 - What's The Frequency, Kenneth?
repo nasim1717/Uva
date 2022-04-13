@@ -1,0 +1,39 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string st,s;
+    int i,len;
+
+    while(getline(cin,st)){
+        map<string, int>mp;
+        len = st.size();
+        for(i=0; i<len; i++){
+            if(st[i]>='a' && st[i]<='z' || st[i]>='A' && st[i]<='Z'){
+                s = st[i];
+                mp[s]++;
+            }
+       }
+
+       int maxi=0,x;
+       string y,a;
+        for(auto it : mp){
+           x = it.second;
+            if(x>maxi){
+                maxi=x;
+                y=it.first;
+                a=y;
+            }
+       }
+       string b;
+       for(auto it : mp){
+           b=it.first;
+           x = it.second;
+                if(x==maxi && b!=a){
+                    y+=it.first;
+                }
+       }
+       cout<<y<<" "<<maxi<<endl;
+    }
+return 0;
+}
