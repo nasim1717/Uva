@@ -1,0 +1,102 @@
+
+#include<bits/stdc++.h>
+#include<cstring>
+using namespace std;
+
+string solution(string a, char b){
+    int i,t1=0;
+    string ans;
+    char t2;
+    for(i=a.size()-1; i>=0; i--){
+        t1+=((a[i]-48)*(b-48));
+        t2=(t1%10)+48;
+        t1/=10;
+        ans.push_back(t2);
+    }
+    if(t1){
+        ans.push_back(t1+48);
+    }
+    reverse(ans.begin(), ans.end());
+    if(ans[0]=='0')
+        return "0";
+    return ans;
+}
+string BIS(string x, string y){
+    int i,j,sum=0;
+    char c;
+
+    if(x.size()<y.size())
+        swap(x,y);
+    if(y.empty()) return x;
+    string ans;
+
+    reverse(x.begin(), x.end());
+    reverse(y.begin(),y.end());
+
+    for(i=0; i<y.size(); i++){
+        sum+=(x[i]-48)+(y[i]-48);
+        if(sum>9){
+           c=(sum%10)+48;
+           sum/=10;
+        }
+        else{
+            c=(sum+48);
+            sum=0;
+        }
+        ans.push_back(c);
+    }
+    while(i<x.size()){
+        if((x[i]-48)+sum>9){
+            sum+=x[i]-48;
+            ans.push_back((sum%10)+48);
+            sum/=10;
+        }
+        else{
+            ans.push_back(((x[i]-48)+sum)+48);
+            sum=0;
+        }
+        i++;
+    }
+    if(sum)
+        ans.push_back(sum+48);
+    reverse(ans.begin(),ans.end());
+    return ans;
+
+}
+string bigmultiply(string str1, string str2){
+    int i,j,l=1,s2;
+    if(str1.size()<str2.size())
+        swap(str1,str2);
+     string temp;
+    string ans="0";
+    bool f=true;
+
+    for(i=str2.size()-1; i>=0; i--){
+        temp=solution(str1,str2[i]);
+        if(f){
+            ans = temp;
+            f=false;
+       }
+        else{
+            string c;
+            for(s2=l; s2>0; s2--){
+                c.push_back(ans[ans.size()-1]);
+                ans.pop_back();
+            }
+            l++;
+            reverse(c.begin(), c.end());
+            ans=BIS(ans,temp);
+            ans+=c;
+       }
+    }
+    return ans;
+}
+
+int main(){
+    string st1,st2;
+    while(cin>>st1){
+          cin>>st2;
+        cout<<bigmultiply(st1,st2)<<endl;
+    }
+return 0;
+}
